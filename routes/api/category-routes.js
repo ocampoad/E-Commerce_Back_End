@@ -4,8 +4,11 @@ const seedCategories = require('../../seeds/category-seeds');
 
 // The `/api/categories` endpoint
 
-router.get('/', (req, res) => {
-  res.json(Category.findAll())
+router.get('/', async (req, res) => {
+  const dbcategoriesData = await Category.findAll();
+  const categories = dbcategoriesData.map(dbCategories => dbCategories.get({plain: true}));
+  res.json(categories);
+
   // be sure to include its associated Products
 });
 
