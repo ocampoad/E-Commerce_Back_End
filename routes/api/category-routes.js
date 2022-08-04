@@ -5,7 +5,11 @@ const seedCategories = require('../../seeds/category-seeds');
 // The `/api/categories` endpoint
 
 router.get('/', async (req, res) => {
-  const dbcategoriesData = await Category.findAll();
+  const dbcategoriesData = await Category.findAll({
+    include: [{
+      model: Product
+    }]
+  });
   const categories = dbcategoriesData.map(dbCategories => dbCategories.get({plain: true}));
   res.json(categories);
 
@@ -13,7 +17,11 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-  const dbCategoriesDatabyID = await Category.findByPk(req.params.id);
+  const dbCategoriesDatabyID = await Category.findByPk(req.params.id, {
+    include: [{
+      model: Product
+    }]
+  });
   const categorybyID = dbCategoriesDatabyID.get({plain:true});
   res.json(categorybyID);
   // find one category by its `id` value
