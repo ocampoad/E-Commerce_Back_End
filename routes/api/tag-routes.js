@@ -7,7 +7,6 @@ router.get('/', async (req, res) => {
   const dbTagsData = await Tag.findAll({
     include: [{
       model: Product,
-      model: ProductTag
     }]
   });
   const tags = dbTagsData.map(dbTags => dbTags.get({plain: true}));
@@ -18,11 +17,9 @@ router.get('/:id',async (req, res) => {
   const dbTagsDatabyID = await Tag.findByPk( req.params.id, {
     include: [{
       model: Product,
-      model: ProductTag
     }]
   });
-  const tagsbyID = dbTagsDatabyID.map(dbTags => dbTags.get({plain: true}));
-  res.json(tagsbyID);
+  res.json(dbTagsDatabyID);
 });
 
 router.post('/', async (req, res) => {

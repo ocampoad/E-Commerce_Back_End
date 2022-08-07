@@ -33,9 +33,9 @@ router.post('/', async (req, res) => {
   const newCategory = await Category.create({
     category_name: req.body.category_name
   });
-  const dbcategoriesData = await Category.findAll();
-  const categories = dbcategoriesData.map(dbCategories => dbCategories.get({plain: true}));
-  res.json(categories);
+  // const dbcategoriesData = await Category.findAll();
+  // const categories = dbcategoriesData.map(dbCategories => dbCategories.get({plain: true}));
+  // res.json(categories);
 });
 
 router.put('/:id',async (req, res) => {
@@ -45,18 +45,18 @@ router.put('/:id',async (req, res) => {
     category_name: req.body.category_name
   });
   await dbCategoriesDatabyID.save()
-  const dbcategoriesData = await Category.findAll();
-  const categories = dbcategoriesData.map(dbCategories => dbCategories.get({plain: true}));
-  res.json(categories);
+  // const dbcategoriesData = await Category.findAll();
+  // const categories = dbcategoriesData.map(dbCategories => dbCategories.get({plain: true}));
+  // res.json(categories);
 });
 
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` 
   const dbCategoriesDatabyID = await Category.findByPk(req.params.id);
   await dbCategoriesDatabyID.destroy();
-  const dbcategoriesData = await Category.findAll();
-  const categories = dbcategoriesData.map(dbCategories => dbCategories.get({plain: true}));
-  res.json(categories);
+  // const dbcategoriesData = await Category.findAll();
+  // const categories = dbcategoriesData.map(dbCategories => dbCategories.get({plain: true}));
+  // res.json(categories);
 });
 
 module.exports = router;

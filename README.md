@@ -6,7 +6,6 @@
   - [The challenge](#the-challenge)
   - [User Story](#user-story)
   - [Acceptance Criteria](#acceptance-criteria)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -44,14 +43,11 @@ THEN the data for each of these routes is displayed in a formatted JSON
 WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 THEN I am able to successfully create, update, and delete data in my database
 ```
+​​
+### Links- Recording
 ​
-### Screenshot
-​
-​
-### Links
-​
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+[GET/POST/UPDATE] (https://drive.google.com/file/d/14Hy5KcS1TwWPNBa9WKFc5E7gDp5_paBO/view)
+[DELETE] (https://drive.google.com/file/d/1REPGnPIkVmCJX_4ySam-vRMxcmqSkym3/view)
 ​
 ## My process
 ​
